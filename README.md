@@ -8,7 +8,3 @@
 | 3주차 | 개인 포트폴리오 템플릿, 프로필 수정, 기술 상세 페이지 | [week3](week3) |
 | 4주차 | MySQL 데이터베이스 연동, 계층별 패키지 구조, 연습문제(나이/성별) | [week4](week4) |
 
-각 주차 폴더의 `README.md`에 자세한 내용과 실행 방법이 있습니다.
-
-## 실행 방법
-각 주차의 `demo` 폴더를 VS Code로 열고 `DemoApplication.java` → `Ctrl + F5` → http://localhost:8080
