@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인 | 이세영 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link th:href="@{/css/templatemo-first-portfolio-style.css}" rel="stylesheet">
+    <style>
+        body { background: var(--section-bg-color); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 16px; }
+        .auth-card { width: 100%; max-width: 420px; background: var(--white-color); border-radius: var(--border-radius-medium); padding: 40px 36px; box-shadow: 0 1rem 3rem rgba(0,0,0,.08); }
+        .auth-card h1 { font-size: 32px; text-align: center; margin-bottom: 28px; }
+        .auth-card .form-control { margin-bottom: 12px; }
+        .auth-card .msg { font-size: 15px; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; }
+        .auth-card .msg.err { background: #fde8e8; color: #c0392b; }
+        .auth-card .msg.ok { background: #e6f7f1; color: #0e7a5a; }
+        .auth-card .btn-main { width: 100%; background: var(--primary-color); color: #fff; border: none; border-radius: 10px; padding: 12px; font-weight: 700; }
+        .auth-card .btn-sub { width: 100%; margin-top: 10px; border-radius: 10px; padding: 12px; }
+        /* 템플릿 CSS가 체크박스를 큰 카드 모양으로 바꿔서 원래 체크박스로 되돌림 */
+        .auth-card .form-check { display: flex; align-items: center; gap: 8px; padding-left: 0; }
+        .auth-card .form-check-input { appearance: auto; position: static; width: 18px; height: 18px; margin: 0; border-radius: 4px; background: none; box-shadow: none; }
+        .auth-card .form-check-label { margin: 0; font-size: 15px; }
+        .auth-card .home { display: block; text-align: center; margin-top: 18px; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <div class="auth-card">
+        <h1><i class="bi-shop"></i><br>로그인</h1>
+        <!-- 상황별 안내 (주소 뒤 ?error / ?logout / ?signup) -->
+        <div class="msg err" th:if="${param.error}">아이디 또는 비밀번호가 올바르지 않습니다.</div>
+        <div class="msg ok" th:if="${param.logout}">로그아웃 되었습니다.</div>
+        <div class="msg ok" th:if="${param.signup}">회원가입이 완료되었습니다. 로그인해 주세요.</div>
+        <!-- th:action 을 써야 CSRF 토큰(hidden _csrf)이 자동으로 들어감. POST /login 은 시큐리티가 처리 -->
+        <form th:action="@{/login}" method="post">
+            <input type="text" name="username" class="form-control" placeholder="아이디" required autofocus>
+            <input type="password" name="password" class="form-control" placeholder="패스워드" required>
+            <div class="form-check mb-3">
+                <input type="checkbox" name="remember-me" id="remember-me" class="form-check-input">
+                <label for="remember-me" class="form-check-label">로그인 상태 유지</label>
+            </div>
+            <button type="submit" class="btn-main">로그인</button>
+        </form>
+        <a th:href="@{/signup}" class="btn btn-light btn-sub">회원가입</a>
+        <a th:href="@{/}" class="home">← 메인으로</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원가입 | 이세영 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link th:href="@{/css/templatemo-first-portfolio-style.css}" rel="stylesheet">
+    <style>
+        body { background: var(--section-bg-color); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 16px; }
+        .auth-card { width: 100%; max-width: 420px; background: var(--white-color); border-radius: var(--border-radius-medium); padding: 40px 36px; box-shadow: 0 1rem 3rem rgba(0,0,0,.08); }
+        .auth-card h1 { font-size: 32px; text-align: center; margin-bottom: 28px; }
+        .auth-card .form-control { margin-bottom: 12px; }
+        .auth-card .msg { font-size: 15px; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; }
+        .auth-card .msg.err { background: #fde8e8; color: #c0392b; }
+        .auth-card .msg.ok { background: #e6f7f1; color: #0e7a5a; }
+        .auth-card .btn-main { width: 100%; background: var(--primary-color); color: #fff; border: none; border-radius: 10px; padding: 12px; font-weight: 700; }
+        .auth-card .btn-sub { width: 100%; margin-top: 10px; border-radius: 10px; padding: 12px; }
+        .auth-card .home { display: block; text-align: center; margin-top: 18px; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <div class="auth-card">
+        <h1><i class="bi-person-plus"></i><br>회원가입</h1>
+        <!-- 중복 아이디, 비밀번호 불일치 등 (컨트롤러가 넘긴 ${error}) -->
+        <div class="msg err" th:if="${error}" th:text="${error}"></div>
+        <!-- 입력 칸 name = MemberForm 필드 이름 → 자동 바인딩. 실패해도 입력값 유지 (비밀번호 제외) -->
+        <form th:action="@{/signup}" method="post">
+            <input type="text" name="username" class="form-control" placeholder="아이디" th:value="${memberForm?.username}" required autofocus>
+            <input type="text" name="name" class="form-control" placeholder="이름" th:value="${memberForm?.name}" required>
+            <input type="password" name="password" class="form-control" placeholder="비밀번호" required>
+            <input type="password" name="passwordConfirm" class="form-control" placeholder="비밀번호 확인" required>
+            <button type="submit" class="btn-main">가입하기</button>
+        </form>
+        <a th:href="@{/login}" class="btn btn-light btn-sub">이미 회원이에요 (로그인)</a>
+        <a th:href="@{/}" class="home">← 메인으로</a>
+    </div>
+</body>
+</html>
