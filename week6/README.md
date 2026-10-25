@@ -17,6 +17,8 @@
 | ② URL | `requestMatchers(...).hasRole()` | 1차 잠금, 컨트롤러 도착 전 차단 |
 | ③ 메서드 | `@PreAuthorize` | 2차 잠금, 서비스 실행 직전 차단 (URL 규칙 실수·누락 대비) |
 
+- 화면(login.html, signup.html, mypage.html, admin/members.html, error/403.html)은 **6주차 제공 코드** 사용, index.html 은 제공된 `index_네비게이션_교체부분.html`의 교체부분만 반영 (내 포트폴리오 유지)
+
 ## 6주차 연습문제 - 관리자 보호 & 매니저(MANAGER) 권한
 1. **관리자 본인 보호**: `changeRole`, `deleteMember`에서 대상이 본인이면 거부 (`SecurityContextHolder...getName()`) → "자기 자신의 권한 변경·삭제는 할 수 없습니다."
 2. **MANAGER 권한 추가**: ROLES 에 MANAGER 추가 (회원 관리에서 부여 가능), `/testdb`는 `hasAnyRole("ADMIN", "MANAGER")` → USER 는 403
@@ -46,4 +48,4 @@
 2. `DemoApplication.java` → `Ctrl + F5` → http://localhost:8080
 
 ## 이전 주차
-- [2주차](https://github.com/LSY0820/springboot-week2) · [3주차](https://github.com/LSY0820/springboot-week3) · [4주차](https://github.com/LSY0820/springboot-week4) · [5주차](https://github.com/LSY0820/springboot-week5)
+- [2주차](../week2) · [3주차](../week3) · [4주차](../week4) · [5주차](../week5)

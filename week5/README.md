@@ -15,6 +15,8 @@
 - 비로그인 상태로 `/testdb`(회원목록) 접근 → 로그인 화면으로 이동, 로그인 후 접근 가능
 - **DB 비밀번호 분리**: 계정 정보는 `application-secret.properties`(깃에 안 올라감, `.gitignore`)로 옮기고 `spring.config.import=optional:application-secret.properties`로 읽음
 
+- 화면(login.html, signup.html)은 **5주차 제공 코드** 사용, index.html 은 제공된 `index_네비게이션_교체부분.html`의 교체부분만 반영 (내 포트폴리오 유지)
+
 ## 5주차 연습문제 - 로그인 상태 유지, 비밀번호 확인
 1. **로그인 상태 유지 (remember-me)**: `SecurityConfig`에 `.rememberMe()` 추가 (`key`, 7일). 로그인 화면 체크박스 `name="remember-me"` → 브라우저를 닫았다 열어도 로그인 유지
 2. **비밀번호 확인 검증**: `MemberService.signup()`에서 `password`와 `passwordConfirm` 비교 → 다르면 "비밀번호가 일치하지 않습니다." 출력, DB에 저장하지 않음
