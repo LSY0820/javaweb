@@ -11,6 +11,7 @@
 | 6주차 | 권한(ROLE) 접근 제어, 관리자 페이지 분리, 연습문제(관리자 보호/MANAGER) | [week6](week6) |
 | 7주차 | 회원 관리 REST API(JSON), Postman, 연습문제(검색/오류 처리 한 곳에) | [week7](week7) |
 | 9주차 | 게시판 CRUD(작성자 연결 @ManyToOne), 본인 확인(남의 글 403), 연습문제(조회수/내가 쓴 글) | [week9](week9) |
+| 10주차 | 페이징(Page/PageRequest), 검색(JPQL @Query), 댓글 쓰기·삭제(cascade, 회원 삭제 막기), 연습문제(내가 쓴 글 페이징/작성자 검색) | [week10](week10) |
 
 
 
