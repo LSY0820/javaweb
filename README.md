@@ -13,6 +13,7 @@
 | 9주차 | 게시판 CRUD(작성자 연결 @ManyToOne), 본인 확인(남의 글 403), 연습문제(조회수/내가 쓴 글) | [week9](week9) |
 | 10주차 | 페이징(Page/PageRequest), 검색(JPQL @Query), 댓글 쓰기·삭제(cascade, 회원 삭제 막기), 연습문제(내가 쓴 글 페이징/작성자 검색) | [week10](week10) |
 | 11주차 | 모집글·포스터 파일 업로드(MultipartFile), 신청 바구니(세션), 신청 확정 @Transactional 롤백, 연습문제(신청 취소/신청자 있는 글·회원 삭제 막기) | [week11](week11) |
+| 12주차 | WebSocket + STOMP 실시간 남은 자리(/topic/seats)·신청 알림(convertAndSendToUser), 커밋 뒤 전송(@TransactionalEventListener), 연습문제(신청 취소 실시간/댓글 알림) | [week12](week12) |
 
 
 
